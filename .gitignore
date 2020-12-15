@@ -6,6 +6,5 @@ __pychache__/
 local_settings.py
 /media
 /static
-/.gitignore
 /manage.py
 /venv/
