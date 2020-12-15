@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -12,17 +13,18 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <div class="container-xxl">
-        <a class="navbar-brand" href="#">ProductHunt</a>
+    <div class="container">
+        <a class="navbar-brand" href="#"><img class="d-inline-block align-middle" width="40px" height="auto"
+                                              src="{% static 'logo.png' %}" alt=""><span>Product Hunt</span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <a href="/" class="nav-link">Products</a>
-                <a href="" class="nav-link"></a>
-            </ul>
+            <div class="btn-group ms-auto mb-2 mb-lg-0">
+                <a href="/" class="btn btn-outline-primary btn-close-white">Sign Up</a>
+                <a href="" class="btn btn-outline-warning">Login</a>
+            </div>
         </div>
     </div>
 </nav>
@@ -42,7 +44,7 @@
 
 <main>
     <div class="container-xxl">
-        <div class="row py-5">
+        <div class="row py-5 justify-content-center">
             {% block content %}
             {% endblock %}
         </div>

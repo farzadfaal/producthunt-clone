@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{# Page Title #}
+{% block page_title %}
+    Sign Up
+{% endblock %}
+
+{# Sign Up Form #}
+{% block content %}
+    <form class="col-sm-6 col-md-4" action="{% url 'signup' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-floating mb-3">
+            <input type="text" name="username" class="form-control" id="username" placeholder="username">
+            <label for="username">Username</label>
+        </div>
+        <div class="form-floating my-3">
+            <input type="password" name="password" class="form-control" id="password"
+                   placeholder="Password">
+            <label for="password">Password</label>
+        </div>
+        <div class="form-floating my-3">
+            <input type="password" name="password_confirmation" class="form-control" id="password_confirmation"
+                   placeholder="Password">
+            <label for="password_confirmation">Confirm Password</label>
+            <div id="signupNote" class="form-text">Don't Have An Account? <a href="{% url 'signup' %}">Sign
+                Up!</a></div>
+        </div>
+        <div class="d-grid gap-2">
+            <button class="btn btn-primary" type="submit">Sign Up!</button>
+        </div>
+    </form>
+{% endblock %}
